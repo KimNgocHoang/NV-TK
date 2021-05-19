@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70186405-46F2-4D1D-A150-A128623C641D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyChungCu</RootNamespace>
+    <AssemblyName>QuanLyChungCu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\BLL_Nhanvien.cs" />
+    <Compile Include="BLL\BLL_TaiKhoan.cs" />
+    <Compile Include="BLL\ChucvuBLL.cs" />
+    <Compile Include="canho.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CBBItem.cs" />
+    <Compile Include="chitietcanho.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chitiethoadon.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="chucvu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CBBChucvu.cs" />
+    <Compile Include="dichvu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hoadondichvu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hogiadinh.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="hopdong.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="khu.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="nhanvien.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="taikhoan.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_Canho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Canho.Designer.cs">
+      <DependentUpon>Form_Canho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_ChoThue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_ChoThue.Designer.cs">
+      <DependentUpon>Form_ChoThue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Login.Designer.cs">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_Nhanvien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Nhanvien.Designer.cs">
+      <DependentUpon>Form_Nhanvien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_QuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_QuanLy.Designer.cs">
+      <DependentUpon>Form_QuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_Dichvu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Dichvu.Designer.cs">
+      <DependentUpon>Form_Dichvu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_Hopdong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Hopdong.Designer.cs">
+      <DependentUpon>Form_Hopdong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Form_Thongtin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Form_Thongtin.Designer.cs">
+      <DependentUpon>Form_Thongtin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Form_ChoThue.resx">
+      <DependentUpon>Form_ChoThue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_Login.resx">
+      <DependentUpon>Form_Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_Nhanvien.resx">
+      <DependentUpon>Form_Nhanvien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_QuanLy.resx">
+      <DependentUpon>Form_QuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_Dichvu.resx">
+      <DependentUpon>Form_Dichvu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Form_Hopdong.resx">
+      <DependentUpon>Form_Hopdong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sky.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bjphibibpjz %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee-identification-card1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\manage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\department.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting-house.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\staff-icon-78.jpg" />
+    <None Include="Resources\635-6358354_city-building-vector-png-city-vector-in-png2.png" />
+    <None Include="Resources\635-6358354_city-building-vector-png-city-vector-in-png1.png" />
+    <None Include="Resources\City-Vector-Line-art1.png" />
+    <None Include="Resources\City-Vector-Line-art.png" />
+    <None Include="Resources\123.jpg" />
+    <None Include="Resources\reset_32x32.png" />
+    <None Include="Resources\Xoa.png" />
+    <None Include="Resources\usergroup_32x32.png" />
+    <None Include="Resources\finduser.png" />
+    <None Include="Resources\edituser.png" />
+    <None Include="Resources\removepivotfield_32x32.png" />
+    <None Include="Resources\adduser.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

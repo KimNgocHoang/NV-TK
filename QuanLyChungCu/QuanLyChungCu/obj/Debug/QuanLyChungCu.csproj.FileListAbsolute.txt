@@ -1,0 +1,55 @@
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csprojAssemblyReference.cache
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Form_Login.resources
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Properties.Resources.resources
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.GenerateResource.cache
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.CoreCompileInputs.cache
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe.config
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.pdb
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.exe
+E:\My Work\Nam 2\Học kì 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.pdb
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe.config
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.pdb
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csprojAssemblyReference.cache
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Form_Login.resources
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Properties.Resources.resources
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.GenerateResource.cache
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.CoreCompileInputs.cache
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.exe
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.pdb
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_QuanLy.resources
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe.config
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.pdb
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csprojAssemblyReference.cache
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Form_Login.resources
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Properties.Resources.resources
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_QuanLy.resources
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.GenerateResource.cache
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.CoreCompileInputs.cache
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.exe
+C:\Users\gh\Desktop\PBL3\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.pdb
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_ChoThue.resources
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_Dichvu.resources
+E:\My Work\Nam 2\Hoc ki 4\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_Hopdong.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe.config
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.exe
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\QuanLyChungCu.pdb
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csprojAssemblyReference.cache
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_ChoThue.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Form_Login.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.Properties.Resources.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_Nhanvien.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_QuanLy.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_Dichvu.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.View.Form_Hopdong.resources
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.GenerateResource.cache
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.CoreCompileInputs.cache
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.exe
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.pdb
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\EntityFramework.dll
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\EntityFramework.SqlServer.dll
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\EntityFramework.xml
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\bin\Debug\EntityFramework.SqlServer.xml
+D:\QLCC\PBL3\QuanLyChungCu\QuanLyChungCu\obj\Debug\QuanLyChungCu.csproj.CopyComplete

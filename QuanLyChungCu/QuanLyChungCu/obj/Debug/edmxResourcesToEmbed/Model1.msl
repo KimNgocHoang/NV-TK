@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="qlchungcuModelStoreContainer" CdmEntityContainer="qlchungcuEntities">
+    <EntitySetMapping Name="canhoes">
+      <EntityTypeMapping TypeName="qlchungcuModel.canho">
+        <MappingFragment StoreEntitySet="canho">
+          <ScalarProperty Name="macanho" ColumnName="macanho" />
+          <ScalarProperty Name="makhu" ColumnName="makhu" />
+          <ScalarProperty Name="maho" ColumnName="maho" />
+          <ScalarProperty Name="loaicanho" ColumnName="loaicanho" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chucvus">
+      <EntityTypeMapping TypeName="qlchungcuModel.chucvu">
+        <MappingFragment StoreEntitySet="chucvu">
+          <ScalarProperty Name="machucvu" ColumnName="machucvu" />
+          <ScalarProperty Name="tenchucvu" ColumnName="tenchucvu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dichvus">
+      <EntityTypeMapping TypeName="qlchungcuModel.dichvu">
+        <MappingFragment StoreEntitySet="dichvu">
+          <ScalarProperty Name="madichvu" ColumnName="madichvu" />
+          <ScalarProperty Name="tendichvu" ColumnName="tendichvu" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoadondichvus">
+      <EntityTypeMapping TypeName="qlchungcuModel.hoadondichvu">
+        <MappingFragment StoreEntitySet="hoadondichvu">
+          <ScalarProperty Name="mahoadon" ColumnName="mahoadon" />
+          <ScalarProperty Name="macanho" ColumnName="macanho" />
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+          <ScalarProperty Name="dathanhtoan" ColumnName="dathanhtoan" />
+          <ScalarProperty Name="ngaythanhtoan" ColumnName="ngaythanhtoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hogiadinhs">
+      <EntityTypeMapping TypeName="qlchungcuModel.hogiadinh">
+        <MappingFragment StoreEntitySet="hogiadinh">
+          <ScalarProperty Name="maho" ColumnName="maho" />
+          <ScalarProperty Name="tenchuho" ColumnName="tenchuho" />
+          <ScalarProperty Name="sothanhvien" ColumnName="sothanhvien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hopdongs">
+      <EntityTypeMapping TypeName="qlchungcuModel.hopdong">
+        <MappingFragment StoreEntitySet="hopdong">
+          <ScalarProperty Name="mahopdong" ColumnName="mahopdong" />
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="macanho" ColumnName="macanho" />
+          <ScalarProperty Name="maho" ColumnName="maho" />
+          <ScalarProperty Name="tenhopdong" ColumnName="tenhopdong" />
+          <ScalarProperty Name="giatien" ColumnName="giatien" />
+          <ScalarProperty Name="thoihan" ColumnName="thoihan" />
+          <ScalarProperty Name="ngayki" ColumnName="ngayki" />
+          <ScalarProperty Name="dahuy" ColumnName="dahuy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khus">
+      <EntityTypeMapping TypeName="qlchungcuModel.khu">
+        <MappingFragment StoreEntitySet="khu">
+          <ScalarProperty Name="makhu" ColumnName="makhu" />
+          <ScalarProperty Name="tenkhu" ColumnName="tenkhu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhanviens">
+      <EntityTypeMapping TypeName="qlchungcuModel.nhanvien">
+        <MappingFragment StoreEntitySet="nhanvien">
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="machucvu" ColumnName="machucvu" />
+          <ScalarProperty Name="tennhanvien" ColumnName="tennhanvien" />
+          <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+          <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="taikhoans">
+      <EntityTypeMapping TypeName="qlchungcuModel.taikhoan">
+        <MappingFragment StoreEntitySet="taikhoan">
+          <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+          <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chitietcanhoes">
+      <EntityTypeMapping TypeName="qlchungcuModel.chitietcanho">
+        <MappingFragment StoreEntitySet="chitietcanho">
+          <ScalarProperty Name="macanho" ColumnName="macanho" />
+          <ScalarProperty Name="vatdung" ColumnName="vatdung" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+          <ScalarProperty Name="dongia" ColumnName="dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chitiethoadons">
+      <EntityTypeMapping TypeName="qlchungcuModel.chitiethoadon">
+        <MappingFragment StoreEntitySet="chitiethoadon">
+          <ScalarProperty Name="mahoadon" ColumnName="mahoadon" />
+          <ScalarProperty Name="madichvu" ColumnName="madichvu" />
+          <ScalarProperty Name="soluong" ColumnName="soluong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

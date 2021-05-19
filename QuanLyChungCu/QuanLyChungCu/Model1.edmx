@@ -1,0 +1,811 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="qlchungcuModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="canho">
+          <Key>
+            <PropertyRef Name="macanho" />
+          </Key>
+          <Property Name="macanho" Type="int" Nullable="false" />
+          <Property Name="makhu" Type="int" />
+          <Property Name="maho" Type="int" />
+          <Property Name="loaicanho" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'qlchungcu.dbo.chitietcanho' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="chitietcanho">
+          <Key>
+            <PropertyRef Name="vatdung" />
+            <PropertyRef Name="soluong" />
+            <PropertyRef Name="dongia" />
+          </Key>
+          <Property Name="macanho" Type="int" />
+          <Property Name="vatdung" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="soluong" Type="int" Nullable="false" />
+          <Property Name="dongia" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'qlchungcu.dbo.chitiethoadon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="chitiethoadon">
+          <Key>
+            <PropertyRef Name="soluong" />
+          </Key>
+          <Property Name="mahoadon" Type="int" />
+          <Property Name="madichvu" Type="int" />
+          <Property Name="soluong" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="chucvu">
+          <Key>
+            <PropertyRef Name="machucvu" />
+          </Key>
+          <Property Name="machucvu" Type="int" Nullable="false" />
+          <Property Name="tenchucvu" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dichvu">
+          <Key>
+            <PropertyRef Name="madichvu" />
+          </Key>
+          <Property Name="madichvu" Type="int" Nullable="false" />
+          <Property Name="tendichvu" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="gia" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="hoadondichvu">
+          <Key>
+            <PropertyRef Name="mahoadon" />
+          </Key>
+          <Property Name="mahoadon" Type="int" Nullable="false" />
+          <Property Name="macanho" Type="int" />
+          <Property Name="manhanvien" Type="int" />
+          <Property Name="tongtien" Type="float" Nullable="false" />
+          <Property Name="dathanhtoan" Type="bit" Nullable="false" />
+          <Property Name="ngaythanhtoan" Type="date" />
+        </EntityType>
+        <EntityType Name="hogiadinh">
+          <Key>
+            <PropertyRef Name="maho" />
+          </Key>
+          <Property Name="maho" Type="int" Nullable="false" />
+          <Property Name="tenchuho" Type="nvarchar" MaxLength="50" />
+          <Property Name="sothanhvien" Type="int" />
+        </EntityType>
+        <EntityType Name="hopdong">
+          <Key>
+            <PropertyRef Name="mahopdong" />
+          </Key>
+          <Property Name="mahopdong" Type="int" Nullable="false" />
+          <Property Name="manhanvien" Type="int" />
+          <Property Name="macanho" Type="int" />
+          <Property Name="maho" Type="int" />
+          <Property Name="tenhopdong" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="giatien" Type="float" Nullable="false" />
+          <Property Name="thoihan" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="ngayki" Type="date" Nullable="false" />
+          <Property Name="dahuy" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="khu">
+          <Key>
+            <PropertyRef Name="makhu" />
+          </Key>
+          <Property Name="makhu" Type="int" Nullable="false" />
+          <Property Name="tenkhu" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="nhanvien">
+          <Key>
+            <PropertyRef Name="manhanvien" />
+          </Key>
+          <Property Name="manhanvien" Type="int" Nullable="false" />
+          <Property Name="machucvu" Type="int" />
+          <Property Name="tennhanvien" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="gioitinh" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="cmnd" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="sdt" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="ngaysinh" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="taikhoan">
+          <Key>
+            <PropertyRef Name="tendangnhap" />
+          </Key>
+          <Property Name="tendangnhap" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="manhanvien" Type="int" />
+          <Property Name="matkhau" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__canho__maho__398D8EEE">
+          <End Role="hogiadinh" Type="Self.hogiadinh" Multiplicity="0..1" />
+          <End Role="canho" Type="Self.canho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hogiadinh">
+              <PropertyRef Name="maho" />
+            </Principal>
+            <Dependent Role="canho">
+              <PropertyRef Name="maho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__canho__makhu__3A81B327">
+          <End Role="khu" Type="Self.khu" Multiplicity="0..1" />
+          <End Role="canho" Type="Self.canho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khu">
+              <PropertyRef Name="makhu" />
+            </Principal>
+            <Dependent Role="canho">
+              <PropertyRef Name="makhu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__chitietca__macan__3B75D760">
+          <End Role="canho" Type="Self.canho" Multiplicity="0..1" />
+          <End Role="chitietcanho" Type="Self.chitietcanho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canho">
+              <PropertyRef Name="macanho" />
+            </Principal>
+            <Dependent Role="chitietcanho">
+              <PropertyRef Name="macanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__chitietho__madic__3C69FB99">
+          <End Role="dichvu" Type="Self.dichvu" Multiplicity="0..1" />
+          <End Role="chitiethoadon" Type="Self.chitiethoadon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dichvu">
+              <PropertyRef Name="madichvu" />
+            </Principal>
+            <Dependent Role="chitiethoadon">
+              <PropertyRef Name="madichvu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__chitietho__mahoa__3D5E1FD2">
+          <End Role="hoadondichvu" Type="Self.hoadondichvu" Multiplicity="0..1" />
+          <End Role="chitiethoadon" Type="Self.chitiethoadon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hoadondichvu">
+              <PropertyRef Name="mahoadon" />
+            </Principal>
+            <Dependent Role="chitiethoadon">
+              <PropertyRef Name="mahoadon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hoadondic__macan__3E52440B">
+          <End Role="canho" Type="Self.canho" Multiplicity="0..1" />
+          <End Role="hoadondichvu" Type="Self.hoadondichvu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canho">
+              <PropertyRef Name="macanho" />
+            </Principal>
+            <Dependent Role="hoadondichvu">
+              <PropertyRef Name="macanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hoadondic__manha__3F466844">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="hoadondichvu" Type="Self.hoadondichvu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="manhanvien" />
+            </Principal>
+            <Dependent Role="hoadondichvu">
+              <PropertyRef Name="manhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hopdong__macanho__403A8C7D">
+          <End Role="canho" Type="Self.canho" Multiplicity="0..1" />
+          <End Role="hopdong" Type="Self.hopdong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canho">
+              <PropertyRef Name="macanho" />
+            </Principal>
+            <Dependent Role="hopdong">
+              <PropertyRef Name="macanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hopdong__maho__412EB0B6">
+          <End Role="hogiadinh" Type="Self.hogiadinh" Multiplicity="0..1" />
+          <End Role="hopdong" Type="Self.hopdong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hogiadinh">
+              <PropertyRef Name="maho" />
+            </Principal>
+            <Dependent Role="hopdong">
+              <PropertyRef Name="maho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hopdong__manhanv__4222D4EF">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="hopdong" Type="Self.hopdong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="manhanvien" />
+            </Principal>
+            <Dependent Role="hopdong">
+              <PropertyRef Name="manhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__machuc__4316F928">
+          <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chucvu">
+              <PropertyRef Name="machucvu" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="machucvu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__taikhoan__manhan__440B1D61">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="taikhoan" Type="Self.taikhoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="manhanvien" />
+            </Principal>
+            <Dependent Role="taikhoan">
+              <PropertyRef Name="manhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="qlchungcuModelStoreContainer">
+          <EntitySet Name="canho" EntityType="Self.canho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="chucvu" EntityType="Self.chucvu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dichvu" EntityType="Self.dichvu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hoadondichvu" EntityType="Self.hoadondichvu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hogiadinh" EntityType="Self.hogiadinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hopdong" EntityType="Self.hopdong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="khu" EntityType="Self.khu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhanvien" EntityType="Self.nhanvien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="taikhoan" EntityType="Self.taikhoan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="chitietcanho" EntityType="Self.chitietcanho" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [chitietcanho].[macanho] AS [macanho], 
+    [chitietcanho].[vatdung] AS [vatdung], 
+    [chitietcanho].[soluong] AS [soluong], 
+    [chitietcanho].[dongia] AS [dongia]
+    FROM [dbo].[chitietcanho] AS [chitietcanho]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="chitiethoadon" EntityType="Self.chitiethoadon" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [chitiethoadon].[mahoadon] AS [mahoadon], 
+    [chitiethoadon].[madichvu] AS [madichvu], 
+    [chitiethoadon].[soluong] AS [soluong]
+    FROM [dbo].[chitiethoadon] AS [chitiethoadon]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__canho__maho__398D8EEE" Association="Self.FK__canho__maho__398D8EEE">
+            <End Role="hogiadinh" EntitySet="hogiadinh" />
+            <End Role="canho" EntitySet="canho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__canho__makhu__3A81B327" Association="Self.FK__canho__makhu__3A81B327">
+            <End Role="khu" EntitySet="khu" />
+            <End Role="canho" EntitySet="canho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__chitietca__macan__3B75D760" Association="Self.FK__chitietca__macan__3B75D760">
+            <End Role="canho" EntitySet="canho" />
+            <End Role="chitietcanho" EntitySet="chitietcanho" />
+          </AssociationSet>
+          <AssociationSet Name="FK__chitietho__madic__3C69FB99" Association="Self.FK__chitietho__madic__3C69FB99">
+            <End Role="dichvu" EntitySet="dichvu" />
+            <End Role="chitiethoadon" EntitySet="chitiethoadon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__chitietho__mahoa__3D5E1FD2" Association="Self.FK__chitietho__mahoa__3D5E1FD2">
+            <End Role="hoadondichvu" EntitySet="hoadondichvu" />
+            <End Role="chitiethoadon" EntitySet="chitiethoadon" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hoadondic__macan__3E52440B" Association="Self.FK__hoadondic__macan__3E52440B">
+            <End Role="canho" EntitySet="canho" />
+            <End Role="hoadondichvu" EntitySet="hoadondichvu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hoadondic__manha__3F466844" Association="Self.FK__hoadondic__manha__3F466844">
+            <End Role="nhanvien" EntitySet="nhanvien" />
+            <End Role="hoadondichvu" EntitySet="hoadondichvu" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hopdong__macanho__403A8C7D" Association="Self.FK__hopdong__macanho__403A8C7D">
+            <End Role="canho" EntitySet="canho" />
+            <End Role="hopdong" EntitySet="hopdong" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hopdong__maho__412EB0B6" Association="Self.FK__hopdong__maho__412EB0B6">
+            <End Role="hogiadinh" EntitySet="hogiadinh" />
+            <End Role="hopdong" EntitySet="hopdong" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hopdong__manhanv__4222D4EF" Association="Self.FK__hopdong__manhanv__4222D4EF">
+            <End Role="nhanvien" EntitySet="nhanvien" />
+            <End Role="hopdong" EntitySet="hopdong" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__machuc__4316F928" Association="Self.FK__nhanvien__machuc__4316F928">
+            <End Role="chucvu" EntitySet="chucvu" />
+            <End Role="nhanvien" EntitySet="nhanvien" />
+          </AssociationSet>
+          <AssociationSet Name="FK__taikhoan__manhan__440B1D61" Association="Self.FK__taikhoan__manhan__440B1D61">
+            <End Role="nhanvien" EntitySet="nhanvien" />
+            <End Role="taikhoan" EntitySet="taikhoan" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="qlchungcuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="canho">
+          <Key>
+            <PropertyRef Name="macanho" />
+          </Key>
+          <Property Name="macanho" Type="Int32" Nullable="false" />
+          <Property Name="makhu" Type="Int32" />
+          <Property Name="maho" Type="Int32" />
+          <Property Name="loaicanho" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="hogiadinh" Relationship="Self.FK__canho__maho__398D8EEE" FromRole="canho" ToRole="hogiadinh" />
+          <NavigationProperty Name="khu" Relationship="Self.FK__canho__makhu__3A81B327" FromRole="canho" ToRole="khu" />
+          <NavigationProperty Name="chitietcanhoes" Relationship="Self.FK__chitietca__macan__3B75D760" FromRole="canho" ToRole="chitietcanho" />
+          <NavigationProperty Name="hoadondichvus" Relationship="Self.FK__hoadondic__macan__3E52440B" FromRole="canho" ToRole="hoadondichvu" />
+          <NavigationProperty Name="hopdongs" Relationship="Self.FK__hopdong__macanho__403A8C7D" FromRole="canho" ToRole="hopdong" />
+        </EntityType>
+        <EntityType Name="chucvu">
+          <Key>
+            <PropertyRef Name="machucvu" />
+          </Key>
+          <Property Name="machucvu" Type="Int32" Nullable="false" />
+          <Property Name="tenchucvu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="nhanviens" Relationship="Self.FK__nhanvien__machuc__4316F928" FromRole="chucvu" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="dichvu">
+          <Key>
+            <PropertyRef Name="madichvu" />
+          </Key>
+          <Property Name="madichvu" Type="Int32" Nullable="false" />
+          <Property Name="tendichvu" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gia" Type="Double" Nullable="false" />
+          <NavigationProperty Name="chitiethoadons" Relationship="Self.FK__chitietho__madic__3C69FB99" FromRole="dichvu" ToRole="chitiethoadon" />
+        </EntityType>
+        <EntityType Name="hoadondichvu">
+          <Key>
+            <PropertyRef Name="mahoadon" />
+          </Key>
+          <Property Name="mahoadon" Type="Int32" Nullable="false" />
+          <Property Name="macanho" Type="Int32" />
+          <Property Name="manhanvien" Type="Int32" />
+          <Property Name="tongtien" Type="Double" Nullable="false" />
+          <Property Name="dathanhtoan" Type="Boolean" Nullable="false" />
+          <Property Name="ngaythanhtoan" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="canho" Relationship="Self.FK__hoadondic__macan__3E52440B" FromRole="hoadondichvu" ToRole="canho" />
+          <NavigationProperty Name="chitiethoadons" Relationship="Self.FK__chitietho__mahoa__3D5E1FD2" FromRole="hoadondichvu" ToRole="chitiethoadon" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__hoadondic__manha__3F466844" FromRole="hoadondichvu" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="hogiadinh">
+          <Key>
+            <PropertyRef Name="maho" />
+          </Key>
+          <Property Name="maho" Type="Int32" Nullable="false" />
+          <Property Name="tenchuho" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sothanhvien" Type="Int32" />
+          <NavigationProperty Name="canhoes" Relationship="Self.FK__canho__maho__398D8EEE" FromRole="hogiadinh" ToRole="canho" />
+          <NavigationProperty Name="hopdongs" Relationship="Self.FK__hopdong__maho__412EB0B6" FromRole="hogiadinh" ToRole="hopdong" />
+        </EntityType>
+        <EntityType Name="hopdong">
+          <Key>
+            <PropertyRef Name="mahopdong" />
+          </Key>
+          <Property Name="mahopdong" Type="Int32" Nullable="false" />
+          <Property Name="manhanvien" Type="Int32" />
+          <Property Name="macanho" Type="Int32" />
+          <Property Name="maho" Type="Int32" />
+          <Property Name="tenhopdong" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="giatien" Type="Double" Nullable="false" />
+          <Property Name="thoihan" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ngayki" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dahuy" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="canho" Relationship="Self.FK__hopdong__macanho__403A8C7D" FromRole="hopdong" ToRole="canho" />
+          <NavigationProperty Name="hogiadinh" Relationship="Self.FK__hopdong__maho__412EB0B6" FromRole="hopdong" ToRole="hogiadinh" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__hopdong__manhanv__4222D4EF" FromRole="hopdong" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="khu">
+          <Key>
+            <PropertyRef Name="makhu" />
+          </Key>
+          <Property Name="makhu" Type="Int32" Nullable="false" />
+          <Property Name="tenkhu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="canhoes" Relationship="Self.FK__canho__makhu__3A81B327" FromRole="khu" ToRole="canho" />
+        </EntityType>
+        <EntityType Name="nhanvien">
+          <Key>
+            <PropertyRef Name="manhanvien" />
+          </Key>
+          <Property Name="manhanvien" Type="Int32" Nullable="false" />
+          <Property Name="machucvu" Type="Int32" />
+          <Property Name="tennhanvien" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="gioitinh" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="cmnd" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sdt" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ngaysinh" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="chucvu" Relationship="Self.FK__nhanvien__machuc__4316F928" FromRole="nhanvien" ToRole="chucvu" />
+          <NavigationProperty Name="hoadondichvus" Relationship="Self.FK__hoadondic__manha__3F466844" FromRole="nhanvien" ToRole="hoadondichvu" />
+          <NavigationProperty Name="hopdongs" Relationship="Self.FK__hopdong__manhanv__4222D4EF" FromRole="nhanvien" ToRole="hopdong" />
+          <NavigationProperty Name="taikhoans" Relationship="Self.FK__taikhoan__manhan__440B1D61" FromRole="nhanvien" ToRole="taikhoan" />
+        </EntityType>
+        <EntityType Name="taikhoan">
+          <Key>
+            <PropertyRef Name="tendangnhap" />
+          </Key>
+          <Property Name="tendangnhap" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="manhanvien" Type="Int32" />
+          <Property Name="matkhau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="nhanvien" Relationship="Self.FK__taikhoan__manhan__440B1D61" FromRole="taikhoan" ToRole="nhanvien" />
+        </EntityType>
+        <EntityType Name="chitietcanho">
+          <Key>
+            <PropertyRef Name="vatdung" />
+            <PropertyRef Name="soluong" />
+            <PropertyRef Name="dongia" />
+          </Key>
+          <Property Name="macanho" Type="Int32" />
+          <Property Name="vatdung" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="soluong" Type="Int32" Nullable="false" />
+          <Property Name="dongia" Type="Double" Nullable="false" />
+          <NavigationProperty Name="canho" Relationship="Self.FK__chitietca__macan__3B75D760" FromRole="chitietcanho" ToRole="canho" />
+        </EntityType>
+        <EntityType Name="chitiethoadon">
+          <Key>
+            <PropertyRef Name="soluong" />
+          </Key>
+          <Property Name="mahoadon" Type="Int32" />
+          <Property Name="madichvu" Type="Int32" />
+          <Property Name="soluong" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="dichvu" Relationship="Self.FK__chitietho__madic__3C69FB99" FromRole="chitiethoadon" ToRole="dichvu" />
+          <NavigationProperty Name="hoadondichvu" Relationship="Self.FK__chitietho__mahoa__3D5E1FD2" FromRole="chitiethoadon" ToRole="hoadondichvu" />
+        </EntityType>
+        <Association Name="FK__canho__maho__398D8EEE">
+          <End Role="hogiadinh" Type="Self.hogiadinh" Multiplicity="0..1" />
+          <End Role="canho" Type="Self.canho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hogiadinh">
+              <PropertyRef Name="maho" />
+            </Principal>
+            <Dependent Role="canho">
+              <PropertyRef Name="maho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__canho__makhu__3A81B327">
+          <End Role="khu" Type="Self.khu" Multiplicity="0..1" />
+          <End Role="canho" Type="Self.canho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="khu">
+              <PropertyRef Name="makhu" />
+            </Principal>
+            <Dependent Role="canho">
+              <PropertyRef Name="makhu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__chitietca__macan__3B75D760">
+          <End Role="canho" Type="Self.canho" Multiplicity="0..1" />
+          <End Role="chitietcanho" Type="Self.chitietcanho" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canho">
+              <PropertyRef Name="macanho" />
+            </Principal>
+            <Dependent Role="chitietcanho">
+              <PropertyRef Name="macanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hoadondic__macan__3E52440B">
+          <End Role="canho" Type="Self.canho" Multiplicity="0..1" />
+          <End Role="hoadondichvu" Type="Self.hoadondichvu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canho">
+              <PropertyRef Name="macanho" />
+            </Principal>
+            <Dependent Role="hoadondichvu">
+              <PropertyRef Name="macanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hopdong__macanho__403A8C7D">
+          <End Role="canho" Type="Self.canho" Multiplicity="0..1" />
+          <End Role="hopdong" Type="Self.hopdong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="canho">
+              <PropertyRef Name="macanho" />
+            </Principal>
+            <Dependent Role="hopdong">
+              <PropertyRef Name="macanho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__nhanvien__machuc__4316F928">
+          <End Role="chucvu" Type="Self.chucvu" Multiplicity="0..1" />
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="chucvu">
+              <PropertyRef Name="machucvu" />
+            </Principal>
+            <Dependent Role="nhanvien">
+              <PropertyRef Name="machucvu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__chitietho__madic__3C69FB99">
+          <End Role="dichvu" Type="Self.dichvu" Multiplicity="0..1" />
+          <End Role="chitiethoadon" Type="Self.chitiethoadon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dichvu">
+              <PropertyRef Name="madichvu" />
+            </Principal>
+            <Dependent Role="chitiethoadon">
+              <PropertyRef Name="madichvu" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__chitietho__mahoa__3D5E1FD2">
+          <End Role="hoadondichvu" Type="Self.hoadondichvu" Multiplicity="0..1" />
+          <End Role="chitiethoadon" Type="Self.chitiethoadon" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hoadondichvu">
+              <PropertyRef Name="mahoadon" />
+            </Principal>
+            <Dependent Role="chitiethoadon">
+              <PropertyRef Name="mahoadon" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hoadondic__manha__3F466844">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="hoadondichvu" Type="Self.hoadondichvu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="manhanvien" />
+            </Principal>
+            <Dependent Role="hoadondichvu">
+              <PropertyRef Name="manhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hopdong__maho__412EB0B6">
+          <End Role="hogiadinh" Type="Self.hogiadinh" Multiplicity="0..1" />
+          <End Role="hopdong" Type="Self.hopdong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="hogiadinh">
+              <PropertyRef Name="maho" />
+            </Principal>
+            <Dependent Role="hopdong">
+              <PropertyRef Name="maho" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__hopdong__manhanv__4222D4EF">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="hopdong" Type="Self.hopdong" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="manhanvien" />
+            </Principal>
+            <Dependent Role="hopdong">
+              <PropertyRef Name="manhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__taikhoan__manhan__440B1D61">
+          <End Role="nhanvien" Type="Self.nhanvien" Multiplicity="0..1" />
+          <End Role="taikhoan" Type="Self.taikhoan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="nhanvien">
+              <PropertyRef Name="manhanvien" />
+            </Principal>
+            <Dependent Role="taikhoan">
+              <PropertyRef Name="manhanvien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="qlchungcuEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="canhoes" EntityType="Self.canho" />
+          <EntitySet Name="chucvus" EntityType="Self.chucvu" />
+          <EntitySet Name="dichvus" EntityType="Self.dichvu" />
+          <EntitySet Name="hoadondichvus" EntityType="Self.hoadondichvu" />
+          <EntitySet Name="hogiadinhs" EntityType="Self.hogiadinh" />
+          <EntitySet Name="hopdongs" EntityType="Self.hopdong" />
+          <EntitySet Name="khus" EntityType="Self.khu" />
+          <EntitySet Name="nhanviens" EntityType="Self.nhanvien" />
+          <EntitySet Name="taikhoans" EntityType="Self.taikhoan" />
+          <EntitySet Name="chitietcanhoes" EntityType="Self.chitietcanho" />
+          <EntitySet Name="chitiethoadons" EntityType="Self.chitiethoadon" />
+          <AssociationSet Name="FK__canho__maho__398D8EEE" Association="Self.FK__canho__maho__398D8EEE">
+            <End Role="hogiadinh" EntitySet="hogiadinhs" />
+            <End Role="canho" EntitySet="canhoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__canho__makhu__3A81B327" Association="Self.FK__canho__makhu__3A81B327">
+            <End Role="khu" EntitySet="khus" />
+            <End Role="canho" EntitySet="canhoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__chitietca__macan__3B75D760" Association="Self.FK__chitietca__macan__3B75D760">
+            <End Role="canho" EntitySet="canhoes" />
+            <End Role="chitietcanho" EntitySet="chitietcanhoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hoadondic__macan__3E52440B" Association="Self.FK__hoadondic__macan__3E52440B">
+            <End Role="canho" EntitySet="canhoes" />
+            <End Role="hoadondichvu" EntitySet="hoadondichvus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hopdong__macanho__403A8C7D" Association="Self.FK__hopdong__macanho__403A8C7D">
+            <End Role="canho" EntitySet="canhoes" />
+            <End Role="hopdong" EntitySet="hopdongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__nhanvien__machuc__4316F928" Association="Self.FK__nhanvien__machuc__4316F928">
+            <End Role="chucvu" EntitySet="chucvus" />
+            <End Role="nhanvien" EntitySet="nhanviens" />
+          </AssociationSet>
+          <AssociationSet Name="FK__chitietho__madic__3C69FB99" Association="Self.FK__chitietho__madic__3C69FB99">
+            <End Role="dichvu" EntitySet="dichvus" />
+            <End Role="chitiethoadon" EntitySet="chitiethoadons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__chitietho__mahoa__3D5E1FD2" Association="Self.FK__chitietho__mahoa__3D5E1FD2">
+            <End Role="hoadondichvu" EntitySet="hoadondichvus" />
+            <End Role="chitiethoadon" EntitySet="chitiethoadons" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hoadondic__manha__3F466844" Association="Self.FK__hoadondic__manha__3F466844">
+            <End Role="nhanvien" EntitySet="nhanviens" />
+            <End Role="hoadondichvu" EntitySet="hoadondichvus" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hopdong__maho__412EB0B6" Association="Self.FK__hopdong__maho__412EB0B6">
+            <End Role="hogiadinh" EntitySet="hogiadinhs" />
+            <End Role="hopdong" EntitySet="hopdongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__hopdong__manhanv__4222D4EF" Association="Self.FK__hopdong__manhanv__4222D4EF">
+            <End Role="nhanvien" EntitySet="nhanviens" />
+            <End Role="hopdong" EntitySet="hopdongs" />
+          </AssociationSet>
+          <AssociationSet Name="FK__taikhoan__manhan__440B1D61" Association="Self.FK__taikhoan__manhan__440B1D61">
+            <End Role="nhanvien" EntitySet="nhanviens" />
+            <End Role="taikhoan" EntitySet="taikhoans" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="qlchungcuModelStoreContainer" CdmEntityContainer="qlchungcuEntities">
+          <EntitySetMapping Name="canhoes">
+            <EntityTypeMapping TypeName="qlchungcuModel.canho">
+              <MappingFragment StoreEntitySet="canho">
+                <ScalarProperty Name="macanho" ColumnName="macanho" />
+                <ScalarProperty Name="makhu" ColumnName="makhu" />
+                <ScalarProperty Name="maho" ColumnName="maho" />
+                <ScalarProperty Name="loaicanho" ColumnName="loaicanho" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chucvus">
+            <EntityTypeMapping TypeName="qlchungcuModel.chucvu">
+              <MappingFragment StoreEntitySet="chucvu">
+                <ScalarProperty Name="machucvu" ColumnName="machucvu" />
+                <ScalarProperty Name="tenchucvu" ColumnName="tenchucvu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dichvus">
+            <EntityTypeMapping TypeName="qlchungcuModel.dichvu">
+              <MappingFragment StoreEntitySet="dichvu">
+                <ScalarProperty Name="madichvu" ColumnName="madichvu" />
+                <ScalarProperty Name="tendichvu" ColumnName="tendichvu" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hoadondichvus">
+            <EntityTypeMapping TypeName="qlchungcuModel.hoadondichvu">
+              <MappingFragment StoreEntitySet="hoadondichvu">
+                <ScalarProperty Name="mahoadon" ColumnName="mahoadon" />
+                <ScalarProperty Name="macanho" ColumnName="macanho" />
+                <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+                <ScalarProperty Name="tongtien" ColumnName="tongtien" />
+                <ScalarProperty Name="dathanhtoan" ColumnName="dathanhtoan" />
+                <ScalarProperty Name="ngaythanhtoan" ColumnName="ngaythanhtoan" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hogiadinhs">
+            <EntityTypeMapping TypeName="qlchungcuModel.hogiadinh">
+              <MappingFragment StoreEntitySet="hogiadinh">
+                <ScalarProperty Name="maho" ColumnName="maho" />
+                <ScalarProperty Name="tenchuho" ColumnName="tenchuho" />
+                <ScalarProperty Name="sothanhvien" ColumnName="sothanhvien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hopdongs">
+            <EntityTypeMapping TypeName="qlchungcuModel.hopdong">
+              <MappingFragment StoreEntitySet="hopdong">
+                <ScalarProperty Name="mahopdong" ColumnName="mahopdong" />
+                <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+                <ScalarProperty Name="macanho" ColumnName="macanho" />
+                <ScalarProperty Name="maho" ColumnName="maho" />
+                <ScalarProperty Name="tenhopdong" ColumnName="tenhopdong" />
+                <ScalarProperty Name="giatien" ColumnName="giatien" />
+                <ScalarProperty Name="thoihan" ColumnName="thoihan" />
+                <ScalarProperty Name="ngayki" ColumnName="ngayki" />
+                <ScalarProperty Name="dahuy" ColumnName="dahuy" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="khus">
+            <EntityTypeMapping TypeName="qlchungcuModel.khu">
+              <MappingFragment StoreEntitySet="khu">
+                <ScalarProperty Name="makhu" ColumnName="makhu" />
+                <ScalarProperty Name="tenkhu" ColumnName="tenkhu" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhanviens">
+            <EntityTypeMapping TypeName="qlchungcuModel.nhanvien">
+              <MappingFragment StoreEntitySet="nhanvien">
+                <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+                <ScalarProperty Name="machucvu" ColumnName="machucvu" />
+                <ScalarProperty Name="tennhanvien" ColumnName="tennhanvien" />
+                <ScalarProperty Name="gioitinh" ColumnName="gioitinh" />
+                <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="ngaysinh" ColumnName="ngaysinh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="taikhoans">
+            <EntityTypeMapping TypeName="qlchungcuModel.taikhoan">
+              <MappingFragment StoreEntitySet="taikhoan">
+                <ScalarProperty Name="tendangnhap" ColumnName="tendangnhap" />
+                <ScalarProperty Name="manhanvien" ColumnName="manhanvien" />
+                <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chitietcanhoes">
+            <EntityTypeMapping TypeName="qlchungcuModel.chitietcanho">
+              <MappingFragment StoreEntitySet="chitietcanho">
+                <ScalarProperty Name="macanho" ColumnName="macanho" />
+                <ScalarProperty Name="vatdung" ColumnName="vatdung" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+                <ScalarProperty Name="dongia" ColumnName="dongia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chitiethoadons">
+            <EntityTypeMapping TypeName="qlchungcuModel.chitiethoadon">
+              <MappingFragment StoreEntitySet="chitiethoadon">
+                <ScalarProperty Name="mahoadon" ColumnName="mahoadon" />
+                <ScalarProperty Name="madichvu" ColumnName="madichvu" />
+                <ScalarProperty Name="soluong" ColumnName="soluong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
